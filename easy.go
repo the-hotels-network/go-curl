@@ -66,8 +66,8 @@ import (
 	"fmt"
 	"mime"
 	"path"
-	"unsafe"
 	"sync"
+	"unsafe"
 )
 
 type CurlInfo C.CURLINFO
@@ -137,7 +137,7 @@ func (c *contextMap) Delete(k uintptr) {
 	delete(c.items, k)
 }
 
-var context_map = &contextMap {
+var context_map = &contextMap{
 	items: make(map[uintptr]*CURL),
 }
 
@@ -405,8 +405,9 @@ func (curl *CURL) Getinfo(info CurlInfo) (ret interface{}, err error) {
 		debugf("Getinfo %s", ret)
 		return ret, err
 	case C.CURLINFO_SLIST:
-		a_ptr_slist := new(C.struct_curl_slist)
+		var a_ptr_slist *C.struct_curl_slist
 		err := newCurlError(C.curl_easy_getinfo_slist(p, cInfo, &a_ptr_slist))
+		defer C.curl_slist_free_all(a_ptr_slist)
 		ret := []string{}
 		for a_ptr_slist != nil {
 			debugf("Getinfo %s %v", C.GoString(a_ptr_slist.data), a_ptr_slist.next)
