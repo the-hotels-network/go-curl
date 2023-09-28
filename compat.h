@@ -523,6 +523,32 @@
 #define CURLE_OPERATION_TIMEDOUT -1
 #if (LIBCURL_VERSION_MINOR == 10 && LIBCURL_VERSION_PATCH < 1) || LIBCURL_VERSION_MINOR < 10 
 #error your version is TOOOOOOOO low
+#endif /* 7.10.1 */
+#endif /* 7.10.2 */
+#endif /* 7.10.3 */
+#endif /* 7.10.4 */
+#endif /* 7.10.5 */
+#endif /* 7.10.6 */
+#endif /* 7.10.7 */
+#endif /* 7.10.8 */
+#endif /* 7.11.0 */
+#endif /* 7.11.1 */
+#endif /* 7.11.2 */
+#endif /* 7.12.0 */
+#endif /* 7.12.1 */
+#endif /* 7.12.2 */
+#endif /* 7.12.3 */
+#endif /* 7.13.0 */
+#endif /* 7.13.1 */
+#endif /* 7.13.2 */
+#endif /* 7.14.0 */
+#endif /* 7.14.1 */
+#endif /* 7.15.0 */
+#endif /* 7.15.1 */
+#endif /* 7.15.2 */
+#endif /* 7.15.3 */
+#endif /* 7.15.4 */
+#endif /* 7.15.5 */
 #endif /* 7.16.0 */
 #endif /* 7.16.1 */
 #endif /* 7.16.2 */
