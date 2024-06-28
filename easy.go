@@ -6,6 +6,8 @@ package curl
 #include "callback.h"
 #include "compat.h"
 
+#define CURL_DISABLE_DEPRECATION
+
 static CURLcode curl_easy_setopt_long(CURL *handle, CURLoption option, long parameter) {
   return curl_easy_setopt(handle, option, parameter);
 }
